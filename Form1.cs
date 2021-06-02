@@ -12,105 +12,124 @@ namespace MemorySpiel
 {
     public partial class Form1 : Form
     {
-        private int timeClicked = 1;
+        private int timeClicked = 0;
+        Image defaultImage = Properties.Resources._00;
+        PictureBox firstClicked, secondClicked;
+
+        
+
         public Form1()
         {
             InitializeComponent();
+
+            // Hardcoded tag, will change 
+            pictureBox1.Tag = "01";
+            pictureBox4.Tag = "01";
+            pictureBox2.Tag = "02";
+
+            List<int> numbers = new List<int>();
+
+
         }
 
         private void flip(PictureBox pictureBox)
         {
             pictureBox.Image = Properties.Resources._00;
         }
+
         private void compare(PictureBox box1, PictureBox box2)
         {
-            if (box1.Image.Tag == box2.Image.Tag)
+            if (box1.Tag == box2.Tag)
             {
                 MessageBox.Show("gut", "gut", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                box1.Enabled = false;
-                box2.Enabled = false;
+                
+                firstClicked.Visible = false;
+                secondClicked.Visible = false;
+
+                firstClicked = null;
+                secondClicked = null;
             }
             else
             {
-                flip(box1);
-                flip(box2);
-                MessageBox.Show("falsch", "flasch", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                timer1.Start();
             }
         }
 
-        private void click(PictureBox pictureBox, String tag)
+        private void timer1_Tick(object sender, EventArgs e)
         {
-            if ((timeClicked % 2) == 0)
-            {
-                pictureBox1.Image = Properties.Resources._02;
-                pictureBox1.Image.Tag = tag;
-            }
-            else
-            {
-                pictureBox1.Image = Properties.Resources._00;
-                pictureBox1.Image.Tag = "00";
-            }
-            timeClicked++;
-            labelTimeClicked.Text = "Time Clicked: " + timeClicked.ToString();
+            timer1.Stop();
+            
+            firstClicked.Image = defaultImage;
+            secondClicked.Image = defaultImage;
+            
+            firstClicked = null;
+            secondClicked = null;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if ((timeClicked % 2) == 0)
+            if (firstClicked == null)
             {
                 pictureBox1.Image = Properties.Resources._01;
-                pictureBox1.Image.Tag = "01";
+                firstClicked = pictureBox1;
             }
-            else
+            else if (firstClicked != null && secondClicked == null)
             {
-                pictureBox1.Image = Properties.Resources._00;
-                pictureBox1.Image.Tag = "00";
+                pictureBox1.Image = Properties.Resources._01;
+                secondClicked = pictureBox1;
+
+                compare(firstClicked, secondClicked);
             }
-            timeClicked++;
-            labelTimeClicked.Text = "Time Clicked: " + timeClicked.ToString();
 
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            if ((timeClicked % 2) == 0)
+            if (firstClicked == null)
             {
-                pictureBox4.Image = Properties.Resources._02;
-                pictureBox4.Image.Tag = "02";
+                pictureBox4.Image = Properties.Resources._01;
+                firstClicked = pictureBox4;
             }
-            else
+            else if (firstClicked != null && secondClicked == null)
             {
-                pictureBox4.Image = Properties.Resources._00;
-                pictureBox4.Image.Tag = "00";
-            }
-            timeClicked++;
-            labelTimeClicked.Text = "Time Clicked: " + timeClicked.ToString();
+                pictureBox4.Image = Properties.Resources._01;
+                secondClicked = pictureBox4;
 
+                compare(firstClicked, secondClicked);
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (firstClicked == null)
+            {
+                pictureBox3.Image = Properties.Resources._02;
+                firstClicked = pictureBox4;
+            }
+            else if (firstClicked != null && secondClicked == null)
+            {
+                pictureBox3.Image = Properties.Resources._02;
+                secondClicked = pictureBox4;
+
+                compare(firstClicked, secondClicked);
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            bool clicked;
-            if ((timeClicked % 2) == 0)
+            if (firstClicked == null)
             {
-                clicked = false;
+                pictureBox2.Image = Properties.Resources._02;
+                firstClicked = pictureBox2;
             }
-            else
+            else if (firstClicked != null && secondClicked == null)
             {
-                clicked = true;
+                pictureBox2.Image = Properties.Resources._02;
+                secondClicked = pictureBox2;
+
+                compare(firstClicked, secondClicked);
+
             }
-            if (clicked == false)
-            {
-                pictureBox2.Image = Properties.Resources._01;
-                pictureBox2.Image.Tag = "01";
-            }
-            else
-            {
-                pictureBox2.Image = Properties.Resources._00;
-                pictureBox2.Image.Tag = "00";
-            }
-            timeClicked++;
-            labelTimeClicked.Text = "Time Clicked: " + timeClicked.ToString();
         }
     }
 }
