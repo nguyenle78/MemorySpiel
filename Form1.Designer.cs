@@ -59,7 +59,7 @@ namespace MemorySpiel
             this.pictureBox1.Image = global::MemorySpiel.Properties.Resources._00;
             this.pictureBox1.Location = new System.Drawing.Point(48, 94);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox1.Size = new System.Drawing.Size(78, 78);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -70,7 +70,7 @@ namespace MemorySpiel
             this.pictureBox2.Image = global::MemorySpiel.Properties.Resources._00;
             this.pictureBox2.Location = new System.Drawing.Point(132, 94);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(77, 71);
+            this.pictureBox2.Size = new System.Drawing.Size(78, 78);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -79,9 +79,9 @@ namespace MemorySpiel
             // pictureBox3
             // 
             this.pictureBox3.Image = global::MemorySpiel.Properties.Resources._00;
-            this.pictureBox3.Location = new System.Drawing.Point(48, 171);
+            this.pictureBox3.Location = new System.Drawing.Point(48, 178);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(78, 76);
+            this.pictureBox3.Size = new System.Drawing.Size(78, 78);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -90,9 +90,9 @@ namespace MemorySpiel
             // pictureBox4
             // 
             this.pictureBox4.Image = global::MemorySpiel.Properties.Resources._00;
-            this.pictureBox4.Location = new System.Drawing.Point(132, 171);
+            this.pictureBox4.Location = new System.Drawing.Point(131, 178);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(77, 76);
+            this.pictureBox4.Size = new System.Drawing.Size(78, 78);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
@@ -116,7 +116,7 @@ namespace MemorySpiel
             // 
             this.pictureBox5.Location = new System.Drawing.Point(300, 94);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox5.Size = new System.Drawing.Size(78, 78);
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -125,7 +125,7 @@ namespace MemorySpiel
             // 
             this.pictureBox6.Location = new System.Drawing.Point(384, 94);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox6.Size = new System.Drawing.Size(78, 78);
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -134,34 +134,34 @@ namespace MemorySpiel
             // 
             this.pictureBox7.Location = new System.Drawing.Point(216, 94);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(78, 71);
+            this.pictureBox7.Size = new System.Drawing.Size(78, 78);
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(216, 171);
+            this.pictureBox8.Location = new System.Drawing.Point(215, 178);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(78, 76);
+            this.pictureBox8.Size = new System.Drawing.Size(78, 78);
             this.pictureBox8.TabIndex = 8;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(300, 171);
+            this.pictureBox9.Location = new System.Drawing.Point(299, 178);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(78, 76);
+            this.pictureBox9.Size = new System.Drawing.Size(78, 78);
             this.pictureBox9.TabIndex = 9;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(384, 171);
+            this.pictureBox10.Location = new System.Drawing.Point(383, 178);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(78, 76);
+            this.pictureBox10.Size = new System.Drawing.Size(78, 78);
             this.pictureBox10.TabIndex = 10;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Click += new System.EventHandler(this.pictureBox1_Click);
