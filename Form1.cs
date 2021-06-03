@@ -16,10 +16,16 @@ namespace MemorySpiel
         Image defaultImage = Properties.Resources._00;
         PictureBox firstClicked, secondClicked;
 
-        string[] pbTag = { "_01", "_01", "_02", "_02" };
-        Image[] pbImages = { Properties.Resources._01, Properties.Resources._02, Properties.Resources._01, Properties.Resources._02 };
+        string[] pbTag = { "_01", "_01", "_02", "_02", "_03", "_03", "_04", "_04", "_05", "_05" };
+        Image[] pbImages = { Properties.Resources._01, Properties.Resources._01,
+        Properties.Resources._02, Properties.Resources._02,
+        Properties.Resources._03,Properties.Resources._03,
+        Properties.Resources._04,Properties.Resources._04,
+        Properties.Resources._05,Properties.Resources._05};
+
+        PictureBox[] pictureBoxes = new PictureBox[10];
         // Hardcoded tag, will change 
-        PictureBox[] pictureBoxes = new PictureBox[4];
+
 
         public Form1()
         {
@@ -28,9 +34,14 @@ namespace MemorySpiel
             pictureBoxes[1] = pictureBox2;
             pictureBoxes[2] = pictureBox3;
             pictureBoxes[3] = pictureBox4;
-            string[] pbTag = { "_01", "_01", "_02", "_02" };
-            // Hardcoded tag, will change 
-            shuffle(pbTag);
+            pictureBoxes[4] = pictureBox5;
+            pictureBoxes[5] = pictureBox6;
+            pictureBoxes[6] = pictureBox7;
+            pictureBoxes[7] = pictureBox8;
+            pictureBoxes[8] = pictureBox9;
+            pictureBoxes[9] = pictureBox10;
+
+            shuffle(pictureBoxes);
             for (int i = 0; i < pbTag.Length; i++)
             {
                 pictureBoxes[i].Image = defaultImage;
@@ -38,30 +49,21 @@ namespace MemorySpiel
             }
         }
 
-        private static void shuffle(string[] array)
+        private static void shuffle(PictureBox[] pictureBoxes)
         {
+            // Funktion to swap location of PictureBox
             Random random = new Random();
-            for (int i = 0; i < array.Length; i++)
+            Point temp = new Point();
+
+            for (int i = 0; i < pictureBoxes.Length; i++)
             {
-                string temp = array[i];
-                int index = random.Next(0, array.Length);
-                array[i] = array[index];
-                array[index] = temp;
+                temp = pictureBoxes[i].Location;
+                int randomIndex = random.Next(0, pictureBoxes.Length);
+                pictureBoxes[i].Location = pictureBoxes[randomIndex].Location;
+                pictureBoxes[randomIndex].Location = temp;
             }
         }
 
-        private void flipImage(PictureBox pictureBox)
-        {
-            if (pictureBox.Image == defaultImage)
-            {
-                //pictureBox.Image = Properties.Resources.;
-
-            }
-            else
-                pictureBox.Image = defaultImage;
-        }
-
-        
         private void compare(PictureBox box1, PictureBox box2)
         {
             if (box1.Tag == box2.Tag)
@@ -97,7 +99,7 @@ namespace MemorySpiel
             PictureBox pb = (PictureBox)sender;
 
             // Substring, extract the number behind the name picturebox1 -> 1 , 10 space, then -1 for index
-            int i = Convert.ToInt32(pb.Name.Substring(10))-1;
+            int i = Convert.ToInt32(pb.Name.Substring(10)) - 1;
             if (firstClicked == null)
             {
                 pb.Image = pbImages[i];
