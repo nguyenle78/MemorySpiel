@@ -107,22 +107,19 @@ namespace MemorySpiel
             this.pictureBoxCats.TabIndex = 5;
             this.pictureBoxCats.TabStop = false;
             this.pictureBoxCats.Click += new System.EventHandler(this.pictureBoxCats_Click);
-            this.pictureBoxCats.MouseLeave += new System.EventHandler(this.pictureBoxCats_MouseLeave);
-            this.pictureBoxCats.MouseHover += new System.EventHandler(this.pictureBoxCats_MouseHover);
             // 
             // pictureBoxDogs
             // 
             this.pictureBoxDogs.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pictureBoxDogs.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxDogs.Image = global::MemorySpiel.Properties.Resources.d1;
-            this.pictureBoxDogs.Location = new System.Drawing.Point(260, 55);
+            this.pictureBoxDogs.Location = new System.Drawing.Point(260, 56);
             this.pictureBoxDogs.Name = "pictureBoxDogs";
-            this.pictureBoxDogs.Size = new System.Drawing.Size(95, 95);
+            this.pictureBoxDogs.Size = new System.Drawing.Size(95, 96);
             this.pictureBoxDogs.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxDogs.TabIndex = 6;
             this.pictureBoxDogs.TabStop = false;
-            this.pictureBoxDogs.MouseLeave += new System.EventHandler(this.pictureBoxCats_MouseLeave);
-            this.pictureBoxDogs.MouseHover += new System.EventHandler(this.pictureBoxCats_MouseHover);
+            this.pictureBoxDogs.Click += new System.EventHandler(this.pictureBoxDogs_Click);
             // 
             // GameSetiing
             // 

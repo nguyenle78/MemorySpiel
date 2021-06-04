@@ -15,8 +15,9 @@ namespace MemorySpiel
     {
         private int gameMode;
         private Form parentForm;
-        int timeEplased = 0;
+        private string collection;
 
+        int timeEplased;
 
         private Image defaultImage = Properties.Resources.d0;
         private PictureBox firstClicked, secondClicked;
@@ -55,12 +56,12 @@ namespace MemorySpiel
 
         public int GameMode { get => gameMode; set => gameMode = value; }
 
-        public Form1(Form parentForm, int gameMode)
+        public Form1(Form parentForm, int gameMode, String collection)
         {
             this.gameMode = gameMode;
             this.parentForm = parentForm;
+            this.collection = collection;
             InitializeComponent();
-
             // Hardcoded tag, will change 
             pictureBoxes[0] = pictureBox1;
             pictureBoxes[1] = pictureBox2;

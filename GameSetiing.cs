@@ -16,6 +16,7 @@ namespace MemorySpiel
         private String collection;
 
         public int GameMode { get => gameMode; set => gameMode = value; }
+        public string Collection { get => collection; set => collection = value; }
 
         public GameSetiing()
         {
@@ -41,7 +42,7 @@ namespace MemorySpiel
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            Form1 newgame = new Form1(this, GameMode);
+            Form1 newgame = new Form1(this, GameMode,Collection);
             newgame.Show();
             this.Hide();
         }
@@ -53,24 +54,17 @@ namespace MemorySpiel
 
         private void pictureBoxCats_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        
-
-      
-        private void pictureBoxCats_MouseLeave(object sender, EventArgs e)
-        {
             PictureBox pictureBox = (PictureBox)sender;
-            pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-        }
-
-        private void pictureBoxCats_MouseHover(object sender, EventArgs e)
-        {
-            PictureBox pictureBox = (PictureBox)sender;
+            Collection = "Cats";
             pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
         }
-
+        
+        private void pictureBoxDogs_Click(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            Collection = "Dogs";
+            pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+        }
 
     }
 }
