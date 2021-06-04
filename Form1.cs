@@ -12,20 +12,36 @@ namespace MemorySpiel
 {
     public partial class Form1 : Form
     {
-        private int timeClicked = 0;
-        Image defaultImage = Properties.Resources._00;
-        PictureBox firstClicked, secondClicked;
+        private int gameMode;
+        private Form parentForm;
 
-        string[] pbTag = { "_01", "_01", "_02", "_02", "_03", "_03", "_04", "_04", "_05", "_05" };
-        Image[] pbImages = { Properties.Resources._01, Properties.Resources._01,
-        Properties.Resources._02, Properties.Resources._02,
-        Properties.Resources._03,Properties.Resources._03,
-        Properties.Resources._04,Properties.Resources._04,
-        Properties.Resources._05,Properties.Resources._05};
+        private Image defaultImage = Properties.Resources._00;
+        private PictureBox firstClicked, secondClicked;
 
-        PictureBox[] pictureBoxes = new PictureBox[10];
+        string[] pbTag = { "_01", "_01", "_02", "_02", "_03", "_03", "_04", "_04",
+                           "_05", "_05", "_06", "_06", "_07", "_07", "_08", "_08",
+                           "_09", "_09", "_10", "_10", "_11", "_11", "_12", "_12"
+        };
+
+        private Image[] pbImages = {    Properties.Resources._01, Properties.Resources._01,
+                                Properties.Resources._02, Properties.Resources._02,
+                                Properties.Resources._03, Properties.Resources._03,
+                                Properties.Resources._04, Properties.Resources._04,
+                                Properties.Resources._05, Properties.Resources._05,
+                                Properties.Resources._06, Properties.Resources._06,
+                                Properties.Resources._07, Properties.Resources._07,
+                                Properties.Resources._08, Properties.Resources._08,
+                                Properties.Resources._09, Properties.Resources._09,
+                                Properties.Resources._10, Properties.Resources._10,
+                                Properties.Resources._11, Properties.Resources._11,
+                                Properties.Resources._12, Properties.Resources._12
+                           };
+
+        private PictureBox[] pictureBoxes = new PictureBox[24];
+
+        public int GameMode { get => gameMode; set => gameMode = value; }
+
         // Hardcoded tag, will change 
-
 
         public Form1()
         {
@@ -41,24 +57,101 @@ namespace MemorySpiel
             pictureBoxes[8] = pictureBox9;
             pictureBoxes[9] = pictureBox10;
 
-            shuffle(pictureBoxes);
-            for (int i = 0; i < pbTag.Length; i++)
+            pictureBoxes[10] = pictureBox11;
+            pictureBoxes[11] = pictureBox12;
+            pictureBoxes[12] = pictureBox13;
+            pictureBoxes[13] = pictureBox14;
+            pictureBoxes[14] = pictureBox15;
+            pictureBoxes[15] = pictureBox16;
+            pictureBoxes[16] = pictureBox17;
+            pictureBoxes[17] = pictureBox18;
+            pictureBoxes[18] = pictureBox19;
+            pictureBoxes[19] = pictureBox20;
+
+            pictureBoxes[20] = pictureBox21;
+            pictureBoxes[21] = pictureBox22;
+            pictureBoxes[22] = pictureBox23;
+            pictureBoxes[23] = pictureBox24;
+
+            shuffle(pictureBoxes, 8);
+            for (int i = 0; i < pictureBoxes.Length; i++)
             {
                 pictureBoxes[i].Image = defaultImage;
                 pictureBoxes[i].Tag = pbTag[i];
             }
+
         }
 
-        private static void shuffle(PictureBox[] pictureBoxes)
+        public Form1(Form parentForm, int gameMode)
+        {
+            GameMode = gameMode;
+            this.parentForm = parentForm;
+            InitializeComponent();
+
+            pictureBoxes[0] = pictureBox1;
+            pictureBoxes[1] = pictureBox2;
+            pictureBoxes[2] = pictureBox3;
+            pictureBoxes[3] = pictureBox4;
+            pictureBoxes[4] = pictureBox5;
+            pictureBoxes[5] = pictureBox6;
+            pictureBoxes[6] = pictureBox7;
+            pictureBoxes[7] = pictureBox8;
+            pictureBoxes[8] = pictureBox9;
+            pictureBoxes[9] = pictureBox10;
+
+            pictureBoxes[10] = pictureBox11;
+            pictureBoxes[11] = pictureBox12;
+            pictureBoxes[12] = pictureBox13;
+            pictureBoxes[13] = pictureBox14;
+            pictureBoxes[14] = pictureBox15;
+            pictureBoxes[15] = pictureBox16;
+            pictureBoxes[16] = pictureBox17;
+            pictureBoxes[17] = pictureBox18;
+            pictureBoxes[18] = pictureBox19;
+            pictureBoxes[19] = pictureBox20;
+
+            pictureBoxes[20] = pictureBox21;
+            pictureBoxes[21] = pictureBox22;
+            pictureBoxes[22] = pictureBox23;
+            pictureBoxes[23] = pictureBox24;
+
+            shuffle(pictureBoxes, GameMode);
+            for (int i = 0; i < GameMode; i++)
+            {
+                pictureBoxes[i].Image = defaultImage;
+                pictureBoxes[i].Tag = pbTag[i];
+                pictureBoxes[i].Show();
+            }
+
+            switch (gameMode)
+            {
+                case 8:
+                    labelGameMode.Text = "Game Mode: 4x2" ;
+                    break;
+                case 16:
+                    labelGameMode.Text = "Game Mode: 4x4";
+                    break;
+                case 24:
+                    labelGameMode.Text = "Game Mode: 4x6";
+                    break;
+            }
+        }
+
+        private void loadImage(int gamemode)
+        {
+
+        }
+
+        private static void shuffle(PictureBox[] pictureBoxes, int gameMode)
         {
             // Funktion to swap location of PictureBox
             Random random = new Random();
             Point temp = new Point();
 
-            for (int i = 0; i < pictureBoxes.Length; i++)
+            for (int i = 0; i < gameMode; i++)
             {
                 temp = pictureBoxes[i].Location;
-                int randomIndex = random.Next(0, pictureBoxes.Length);
+                int randomIndex = random.Next(0, gameMode);
                 pictureBoxes[i].Location = pictureBoxes[randomIndex].Location;
                 pictureBoxes[randomIndex].Location = temp;
             }
@@ -91,6 +184,18 @@ namespace MemorySpiel
 
             firstClicked = null;
             secondClicked = null;
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            parentForm.Show();
+            this.Close();
+        }
+
+        private void buttonEnde_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            parentForm.Close();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
