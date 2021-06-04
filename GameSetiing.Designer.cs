@@ -58,7 +58,7 @@ namespace MemorySpiel
             // 
             // buttonNext
             // 
-            this.buttonNext.Location = new System.Drawing.Point(62, 304);
+            this.buttonNext.Location = new System.Drawing.Point(50, 304);
             this.buttonNext.Name = "buttonNext";
             this.buttonNext.Size = new System.Drawing.Size(86, 36);
             this.buttonNext.TabIndex = 2;

@@ -12,7 +12,7 @@ namespace MemorySpiel
 {
     public partial class GameSetiing : Form
     {
-        private int gameMode;
+        public int gameMode;
         private String collection;
 
         public int GameMode { get => gameMode; set => gameMode = value; }
@@ -41,7 +41,7 @@ namespace MemorySpiel
 
         private void buttonNext_Click(object sender, EventArgs e)
         {
-            Form1 newgame = new Form1(this, gameMode);
+            Form1 newgame = new Form1(this, GameMode);
             newgame.Show();
             this.Hide();
         }
@@ -51,6 +51,6 @@ namespace MemorySpiel
             this.Close(); //Quit Program
         }
 
-
+       
     }
 }
