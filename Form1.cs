@@ -12,6 +12,8 @@ namespace MemorySpiel
 {
     public partial class Form1 : Form
     {
+        private int gameMode;
+        Form parentForm;
         private int timeClicked = 0;
         Image defaultImage = Properties.Resources._00;
         PictureBox firstClicked, secondClicked;
@@ -27,9 +29,10 @@ namespace MemorySpiel
         // Hardcoded tag, will change 
 
 
-        public Form1()
+        public Form1(Form parentForm, int gamemode)
         {
             InitializeComponent();
+            
             pictureBoxes[0] = pictureBox1;
             pictureBoxes[1] = pictureBox2;
             pictureBoxes[2] = pictureBox3;
