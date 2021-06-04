@@ -60,6 +60,7 @@ namespace MemorySpiel
             this.buttonEnde = new System.Windows.Forms.Button();
             this.labelGameMode = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -89,9 +90,9 @@ namespace MemorySpiel
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MemorySpiel.Properties.Resources._00;
-            this.pictureBox1.Location = new System.Drawing.Point(17, 200);
+            this.pictureBox1.Location = new System.Drawing.Point(34, 204);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox1.Size = new System.Drawing.Size(85, 85);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -101,9 +102,9 @@ namespace MemorySpiel
             // pictureBox2
             // 
             this.pictureBox2.Image = global::MemorySpiel.Properties.Resources._00;
-            this.pictureBox2.Location = new System.Drawing.Point(101, 200);
+            this.pictureBox2.Location = new System.Drawing.Point(125, 204);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox2.Size = new System.Drawing.Size(85, 85);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -113,9 +114,9 @@ namespace MemorySpiel
             // pictureBox3
             // 
             this.pictureBox3.Image = global::MemorySpiel.Properties.Resources._00;
-            this.pictureBox3.Location = new System.Drawing.Point(185, 200);
+            this.pictureBox3.Location = new System.Drawing.Point(216, 204);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox3.Size = new System.Drawing.Size(85, 85);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
@@ -125,9 +126,9 @@ namespace MemorySpiel
             // pictureBox4
             // 
             this.pictureBox4.Image = global::MemorySpiel.Properties.Resources._00;
-            this.pictureBox4.Location = new System.Drawing.Point(269, 200);
+            this.pictureBox4.Location = new System.Drawing.Point(307, 204);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox4.Size = new System.Drawing.Size(85, 85);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 3;
             this.pictureBox4.TabStop = false;
@@ -140,9 +141,10 @@ namespace MemorySpiel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelTimeClicked.AutoSize = true;
-            this.labelTimeClicked.Location = new System.Drawing.Point(355, 327);
+            this.labelTimeClicked.Font = new System.Drawing.Font("Ink Free", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.labelTimeClicked.Location = new System.Drawing.Point(422, 222);
             this.labelTimeClicked.Name = "labelTimeClicked";
-            this.labelTimeClicked.Size = new System.Drawing.Size(76, 15);
+            this.labelTimeClicked.Size = new System.Drawing.Size(215, 43);
             this.labelTimeClicked.TabIndex = 4;
             this.labelTimeClicked.Text = "Time clicked:";
             // 
@@ -153,9 +155,9 @@ namespace MemorySpiel
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Location = new System.Drawing.Point(101, 284);
+            this.pictureBox5.Location = new System.Drawing.Point(125, 295);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox5.Size = new System.Drawing.Size(85, 85);
             this.pictureBox5.TabIndex = 5;
             this.pictureBox5.TabStop = false;
             this.pictureBox5.Visible = false;
@@ -163,9 +165,9 @@ namespace MemorySpiel
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Location = new System.Drawing.Point(185, 284);
+            this.pictureBox6.Location = new System.Drawing.Point(216, 295);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox6.Size = new System.Drawing.Size(85, 85);
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
             this.pictureBox6.Visible = false;
@@ -173,9 +175,9 @@ namespace MemorySpiel
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Location = new System.Drawing.Point(17, 284);
+            this.pictureBox7.Location = new System.Drawing.Point(34, 295);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox7.Size = new System.Drawing.Size(85, 85);
             this.pictureBox7.TabIndex = 7;
             this.pictureBox7.TabStop = false;
             this.pictureBox7.Visible = false;
@@ -183,9 +185,10 @@ namespace MemorySpiel
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Location = new System.Drawing.Point(269, 284);
+            this.pictureBox8.Image = global::MemorySpiel.Properties.Resources.d12;
+            this.pictureBox8.Location = new System.Drawing.Point(307, 295);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox8.Size = new System.Drawing.Size(85, 85);
             this.pictureBox8.TabIndex = 8;
             this.pictureBox8.TabStop = false;
             this.pictureBox8.Visible = false;
@@ -193,9 +196,9 @@ namespace MemorySpiel
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Location = new System.Drawing.Point(17, 368);
+            this.pictureBox9.Location = new System.Drawing.Point(34, 386);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox9.Size = new System.Drawing.Size(85, 85);
             this.pictureBox9.TabIndex = 9;
             this.pictureBox9.TabStop = false;
             this.pictureBox9.Visible = false;
@@ -203,9 +206,9 @@ namespace MemorySpiel
             // 
             // pictureBox10
             // 
-            this.pictureBox10.Location = new System.Drawing.Point(101, 368);
+            this.pictureBox10.Location = new System.Drawing.Point(125, 386);
             this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox10.Size = new System.Drawing.Size(85, 85);
             this.pictureBox10.TabIndex = 10;
             this.pictureBox10.TabStop = false;
             this.pictureBox10.Visible = false;
@@ -213,9 +216,9 @@ namespace MemorySpiel
             // 
             // pictureBox11
             // 
-            this.pictureBox11.Location = new System.Drawing.Point(185, 368);
+            this.pictureBox11.Location = new System.Drawing.Point(216, 386);
             this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox11.Size = new System.Drawing.Size(85, 85);
             this.pictureBox11.TabIndex = 11;
             this.pictureBox11.TabStop = false;
             this.pictureBox11.Visible = false;
@@ -223,9 +226,9 @@ namespace MemorySpiel
             // 
             // pictureBox12
             // 
-            this.pictureBox12.Location = new System.Drawing.Point(269, 368);
+            this.pictureBox12.Location = new System.Drawing.Point(307, 386);
             this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox12.Size = new System.Drawing.Size(85, 85);
             this.pictureBox12.TabIndex = 12;
             this.pictureBox12.TabStop = false;
             this.pictureBox12.Visible = false;
@@ -233,9 +236,9 @@ namespace MemorySpiel
             // 
             // pictureBox13
             // 
-            this.pictureBox13.Location = new System.Drawing.Point(269, 116);
+            this.pictureBox13.Location = new System.Drawing.Point(307, 113);
             this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox13.Size = new System.Drawing.Size(85, 85);
             this.pictureBox13.TabIndex = 16;
             this.pictureBox13.TabStop = false;
             this.pictureBox13.Visible = false;
@@ -243,9 +246,9 @@ namespace MemorySpiel
             // 
             // pictureBox14
             // 
-            this.pictureBox14.Location = new System.Drawing.Point(185, 116);
+            this.pictureBox14.Location = new System.Drawing.Point(216, 113);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox14.Size = new System.Drawing.Size(85, 85);
             this.pictureBox14.TabIndex = 15;
             this.pictureBox14.TabStop = false;
             this.pictureBox14.Visible = false;
@@ -253,9 +256,9 @@ namespace MemorySpiel
             // 
             // pictureBox15
             // 
-            this.pictureBox15.Location = new System.Drawing.Point(101, 116);
+            this.pictureBox15.Location = new System.Drawing.Point(125, 113);
             this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox15.Size = new System.Drawing.Size(85, 85);
             this.pictureBox15.TabIndex = 14;
             this.pictureBox15.TabStop = false;
             this.pictureBox15.Visible = false;
@@ -263,9 +266,9 @@ namespace MemorySpiel
             // 
             // pictureBox16
             // 
-            this.pictureBox16.Location = new System.Drawing.Point(17, 116);
+            this.pictureBox16.Location = new System.Drawing.Point(34, 113);
             this.pictureBox16.Name = "pictureBox16";
-            this.pictureBox16.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox16.Size = new System.Drawing.Size(85, 85);
             this.pictureBox16.TabIndex = 13;
             this.pictureBox16.TabStop = false;
             this.pictureBox16.Visible = false;
@@ -273,9 +276,9 @@ namespace MemorySpiel
             // 
             // pictureBox17
             // 
-            this.pictureBox17.Location = new System.Drawing.Point(269, 452);
+            this.pictureBox17.Location = new System.Drawing.Point(307, 477);
             this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox17.Size = new System.Drawing.Size(85, 85);
             this.pictureBox17.TabIndex = 20;
             this.pictureBox17.TabStop = false;
             this.pictureBox17.Visible = false;
@@ -283,9 +286,9 @@ namespace MemorySpiel
             // 
             // pictureBox18
             // 
-            this.pictureBox18.Location = new System.Drawing.Point(185, 452);
+            this.pictureBox18.Location = new System.Drawing.Point(216, 477);
             this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox18.Size = new System.Drawing.Size(85, 85);
             this.pictureBox18.TabIndex = 19;
             this.pictureBox18.TabStop = false;
             this.pictureBox18.Visible = false;
@@ -293,9 +296,9 @@ namespace MemorySpiel
             // 
             // pictureBox19
             // 
-            this.pictureBox19.Location = new System.Drawing.Point(101, 452);
+            this.pictureBox19.Location = new System.Drawing.Point(125, 477);
             this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox19.Size = new System.Drawing.Size(85, 85);
             this.pictureBox19.TabIndex = 18;
             this.pictureBox19.TabStop = false;
             this.pictureBox19.Visible = false;
@@ -303,9 +306,9 @@ namespace MemorySpiel
             // 
             // pictureBox20
             // 
-            this.pictureBox20.Location = new System.Drawing.Point(17, 452);
+            this.pictureBox20.Location = new System.Drawing.Point(34, 477);
             this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox20.Size = new System.Drawing.Size(85, 85);
             this.pictureBox20.TabIndex = 17;
             this.pictureBox20.TabStop = false;
             this.pictureBox20.Visible = false;
@@ -313,9 +316,9 @@ namespace MemorySpiel
             // 
             // pictureBox21
             // 
-            this.pictureBox21.Location = new System.Drawing.Point(269, 32);
+            this.pictureBox21.Location = new System.Drawing.Point(307, 22);
             this.pictureBox21.Name = "pictureBox21";
-            this.pictureBox21.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox21.Size = new System.Drawing.Size(85, 85);
             this.pictureBox21.TabIndex = 24;
             this.pictureBox21.TabStop = false;
             this.pictureBox21.Visible = false;
@@ -323,9 +326,9 @@ namespace MemorySpiel
             // 
             // pictureBox22
             // 
-            this.pictureBox22.Location = new System.Drawing.Point(185, 32);
+            this.pictureBox22.Location = new System.Drawing.Point(216, 22);
             this.pictureBox22.Name = "pictureBox22";
-            this.pictureBox22.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox22.Size = new System.Drawing.Size(85, 85);
             this.pictureBox22.TabIndex = 23;
             this.pictureBox22.TabStop = false;
             this.pictureBox22.Visible = false;
@@ -333,9 +336,9 @@ namespace MemorySpiel
             // 
             // pictureBox23
             // 
-            this.pictureBox23.Location = new System.Drawing.Point(101, 32);
+            this.pictureBox23.Location = new System.Drawing.Point(125, 22);
             this.pictureBox23.Name = "pictureBox23";
-            this.pictureBox23.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox23.Size = new System.Drawing.Size(85, 85);
             this.pictureBox23.TabIndex = 22;
             this.pictureBox23.TabStop = false;
             this.pictureBox23.Visible = false;
@@ -343,9 +346,9 @@ namespace MemorySpiel
             // 
             // pictureBox24
             // 
-            this.pictureBox24.Location = new System.Drawing.Point(17, 32);
+            this.pictureBox24.Location = new System.Drawing.Point(34, 22);
             this.pictureBox24.Name = "pictureBox24";
-            this.pictureBox24.Size = new System.Drawing.Size(78, 78);
+            this.pictureBox24.Size = new System.Drawing.Size(85, 85);
             this.pictureBox24.TabIndex = 21;
             this.pictureBox24.TabStop = false;
             this.pictureBox24.Visible = false;
@@ -353,9 +356,9 @@ namespace MemorySpiel
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(354, 441);
+            this.buttonBack.Location = new System.Drawing.Point(422, 434);
             this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.Size = new System.Drawing.Size(183, 37);
             this.buttonBack.TabIndex = 25;
             this.buttonBack.Text = "Zurück";
             this.buttonBack.UseVisualStyleBackColor = true;
@@ -364,9 +367,9 @@ namespace MemorySpiel
             // buttonEnde
             // 
             this.buttonEnde.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonEnde.Location = new System.Drawing.Point(435, 441);
+            this.buttonEnde.Location = new System.Drawing.Point(611, 434);
             this.buttonEnde.Name = "buttonEnde";
-            this.buttonEnde.Size = new System.Drawing.Size(75, 23);
+            this.buttonEnde.Size = new System.Drawing.Size(183, 37);
             this.buttonEnde.TabIndex = 26;
             this.buttonEnde.Text = "Ende";
             this.buttonEnde.UseVisualStyleBackColor = false;
@@ -378,27 +381,34 @@ namespace MemorySpiel
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelGameMode.AutoSize = true;
-            this.labelGameMode.Location = new System.Drawing.Point(356, 284);
+            this.labelGameMode.Font = new System.Drawing.Font("Ink Free", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.labelGameMode.Location = new System.Drawing.Point(422, 131);
             this.labelGameMode.Name = "labelGameMode";
-            this.labelGameMode.Size = new System.Drawing.Size(75, 15);
+            this.labelGameMode.Size = new System.Drawing.Size(208, 43);
             this.labelGameMode.TabIndex = 27;
             this.labelGameMode.Text = "Game Mode:";
             // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.Location = new System.Drawing.Point(356, 368);
+            this.labelTime.Font = new System.Drawing.Font("Ink Free", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
+            this.labelTime.Location = new System.Drawing.Point(422, 313);
             this.labelTime.Name = "labelTime";
-            this.labelTime.Size = new System.Drawing.Size(33, 15);
+            this.labelTime.Size = new System.Drawing.Size(98, 43);
             this.labelTime.TabIndex = 28;
             this.labelTime.Text = "Time";
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(522, 541);
+            this.ClientSize = new System.Drawing.Size(856, 583);
             this.Controls.Add(this.labelTime);
             this.Controls.Add(this.labelGameMode);
             this.Controls.Add(this.buttonEnde);
@@ -491,6 +501,7 @@ namespace MemorySpiel
         private System.Windows.Forms.Button buttonEnde;
         private System.Windows.Forms.Label labelGameMode;
         private System.Windows.Forms.Label labelTime;
+        private System.Windows.Forms.Timer timer2;
     }
 }
 

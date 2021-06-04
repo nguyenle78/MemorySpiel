@@ -51,6 +51,26 @@ namespace MemorySpiel
             this.Close(); //Quit Program
         }
 
-       
+        private void pictureBoxCats_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        
+
+      
+        private void pictureBoxCats_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+        }
+
+        private void pictureBoxCats_MouseHover(object sender, EventArgs e)
+        {
+            PictureBox pictureBox = (PictureBox)sender;
+            pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+        }
+
+
     }
 }
